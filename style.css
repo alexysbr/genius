@@ -44,12 +44,13 @@ section{
     background-image: linear-gradient(270deg, rgb(149, 149, 0), yellow);
     border-radius: 0 0 0 100%;
 }
-#cor3{
-    background-image: linear-gradient(270deg, rgb(0, 0, 255), rgb(132, 126, 255));
+#cor3{   
+    background-image: linear-gradient(270deg, rgb(0, 0, 77), rgb(13, 0, 255));
     border-radius: 0 0 100% 0;
 }
 #centro{
-    position: absolute;top: 50%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     /*top: 25%;

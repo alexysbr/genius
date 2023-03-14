@@ -13,27 +13,68 @@ function sleep(ms) {
 
 async function liga_botao_bot(i) {    
     for (var j = 0; j <= i; j++) {
-        document.getElementById("cor"+jogada[j]).style.background="black";  
-        //alert(j);
-        await sleep( 500);
-        //desliga_botao(jogada[j]);
+        await sleep(250);
+        if (jogada[j] == 0) {
+            document.getElementById("cor"+jogada[j]).style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
+        }
+        if (jogada[j] == 1) {
+            document.getElementById("cor"+jogada[j]).style.background = 'radial-gradient(circle, rgb(252, 174, 174), red)';
+        }
+        if (jogada[j] == 2) {
+            document.getElementById("cor"+jogada[j]).style.background = 'radial-gradient(circle, rgb(255, 255, 197), yellow)';
+        }
+        if (jogada[j] == 3) {            
+            document.getElementById("cor"+jogada[j]).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(13, 0, 255))';  
+        }
+        await sleep(500);
+        desliga_botao(j);
+        
     }
 }
 
-async function desliga_botao(j) {
-    if (j == 0) {
+function desliga_botao(j) {
+    if (jogada[j] == 0) {
         document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
     }
-    if (j == 1) {
+    if (jogada[j] == 1) {
         document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(140, 1, 1), red)';
     }
-    if (j == 2) {
+    if (jogada[j] == 2) {
         document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(149, 149, 0), yellow)';
     }
-    if (j == 3) {
-        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(0, 0, 255), rgb(132, 126, 255))';
+    if (jogada[j] == 3) {
+        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(0, 0, 77), rgb(13, 0, 255))';
     }
-    await sleep(500);
+}
+
+function clicado(x){
+    if (x == 0) {
+        document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
+    }
+    if (x == 1) {
+        document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(252, 174, 174), red)';
+    }
+    if (x == 2) {
+        document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(255, 255, 197), yellow)';
+    }
+    if (x == 3) {            
+        document.getElementById("cor"+ x).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(13, 0, 255))';  
+    }
+    return x;
+}
+function desclicado(x){
+    if (x == 0) {
+        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
+    }
+    if (x == 1) {
+        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(140, 1, 1), red)';
+    }
+    if (x == 2) {
+        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(149, 149, 0), yellow)';
+    }
+    if (x == 3) {
+        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(0, 0, 77), rgb(13, 0, 255))';
+    }
 }
 
 function jogo(){
@@ -44,11 +85,15 @@ function jogo(){
     /*alert(jogada[50])*/ //teste do vetor
     for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
-        
-            //desliga_botao(j);
-        
-        /*for (var j = 0; j < i; j++) {
-            document.getElementById("cor"+jogada[i]).style.background="black";
-        }*/
+        for (var j = 0; j <= i; j++) {
+            if (errou == -1){
+                if(jogador[j] != clicado(x)) {
+                    errou = 1;
+                }
+            }
+            if (errou == 1) {
+                alert("Errou");
+            }
+        }
     }
 }
