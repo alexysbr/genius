@@ -12,14 +12,15 @@ function sleep(ms) {
 }
 
 async function liga_botao_bot(i) {    
-    for (var j = 0; j < i; j++) {
-        document.getElementById("cor"+jogada[j]).style.background="black";    
-        await sleep(j * 500);
-        desliga_botao(jogada[j]);
+    for (var j = 0; j <= i; j++) {
+        document.getElementById("cor"+jogada[j]).style.background="black";  
+        //alert(j);
+        await sleep( 500);
+        //desliga_botao(jogada[j]);
     }
 }
 
-function desliga_botao(j) {
+async function desliga_botao(j) {
     if (j == 0) {
         document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
     }
@@ -32,6 +33,7 @@ function desliga_botao(j) {
     if (j == 3) {
         document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(0, 0, 255), rgb(132, 126, 255))';
     }
+    await sleep(500);
 }
 
 function jogo(){
