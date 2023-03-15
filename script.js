@@ -1,5 +1,7 @@
 var jogada=[]
 var errou = -1;
+var cont = 0;
+var teste = -1;
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -60,8 +62,10 @@ function clicado(x){
     if (x == 3) {            
         document.getElementById("cor"+ x).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(13, 0, 255))';  
     }
-    return x;
+    cont++;
+    teste = x;
 }
+
 function desclicado(x){
     if (x == 0) {
         document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
@@ -85,15 +89,17 @@ function jogo(){
     /*alert(jogada[50])*/ //teste do vetor
     for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
-        for (var j = 0; j <= i; j++) {
-            if (errou == -1){
-                if(jogador[j] != clicado(x)) {
+        cont = 0;
+        while (cont <= i) {
+            //if (errou == -1){
+                if(jogada[cont] != teste && teste != -1) {
                     errou = 1;
+                    break;
                 }
-            }
-            if (errou == 1) {
+            //}
+           /* if (errou == 1) {
                 alert("Errou");
-            }
+            }*/
         }
     }
 }
