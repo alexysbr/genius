@@ -90,16 +90,16 @@ function jogo(){
     for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
         cont = 0;
-        while (cont <= i) {
+        /*while (cont <= i) {
             //if (errou == -1){
-                if(jogada[cont] != teste && teste != -1) {
+               /* if(jogada[cont] != teste && teste != -1) {
                     errou = 1;
                     break;
-                }
+                }*/
             //}
            /* if (errou == 1) {
                 alert("Errou");
             }*/
-        }
+       // }*/
     }
 }
