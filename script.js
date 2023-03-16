@@ -2,6 +2,39 @@ var jogada=[]
 var errou = -1;
 var cont = 0;
 var teste = -1;
+var cor_0 = document.getElementById("cor0");
+var cor_1 = document.getElementById("cor1");
+var cor_2 = document.getElementById("cor2");
+var cor_3 = document.getElementById("cor3");
+
+/*console.log(cor0);*/
+
+cor_0.addEventListener('mousedown', (event) => {
+    document.getElementById("cor0").style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
+})
+cor_0.addEventListener('mouseup', (event) => {
+    document.getElementById("cor0").style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
+})
+cor_1.addEventListener('mousedown', (event) => {
+    document.getElementById("cor1").style.background = 'radial-gradient(circle, rgb(252, 174, 174), red)';
+})
+cor_1.addEventListener('mouseup', (event) => {
+    document.getElementById("cor1").style.background = 'linear-gradient(270deg, rgb(140, 1, 1), red)';
+})
+cor_2.addEventListener('mousedown', (event) => {
+    document.getElementById("cor2").style.background = 'radial-gradient(circle, rgb(255, 255, 197), yellow)';
+})
+cor_2.addEventListener('mouseup', (event) => {
+    document.getElementById("cor2").style.background = 'linear-gradient(270deg, rgb(149, 149, 0), rgb(235, 235, 0)';
+})
+cor_3.addEventListener('mousedown', (event) => {
+    document.getElementById("cor3").style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(13, 0, 255))';  
+})
+cor_3.addEventListener('mouseup', (event) => {
+    document.getElementById("cor3").style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
+})
+
+
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -49,7 +82,7 @@ function desliga_botao(j) {
     }
 }
 
-function clicado(x){
+/*function clicado(x){
     if (x == 0) {
         document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
     }
@@ -79,7 +112,7 @@ function desclicado(x){
     if (x == 3) {
         document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
     }
-}
+}*/
 
 function jogo(){
     for (var i = 0; i < 50; i++) {
@@ -89,7 +122,10 @@ function jogo(){
     /*alert(jogada[50])*/ //teste do vetor
     for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
-        cont = 0;
+        for (var j = 0; j <= 4; j++) {
+            
+        }
+        //cont = 0;
         /*while (cont <= i) {
             //if (errou == -1){
                /* if(jogada[cont] != teste && teste != -1) {
