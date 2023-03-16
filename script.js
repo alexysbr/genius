@@ -42,10 +42,10 @@ function desliga_botao(j) {
         document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(140, 1, 1), red)';
     }
     if (jogada[j] == 2) {
-        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(149, 149, 0), yellow)';
+        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(149, 149, 0), rgb(235, 235, 0)';
     }
     if (jogada[j] == 3) {
-        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(0, 0, 77), rgb(13, 0, 255))';
+        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
     }
 }
 
@@ -74,10 +74,10 @@ function desclicado(x){
         document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(140, 1, 1), red)';
     }
     if (x == 2) {
-        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(149, 149, 0), yellow)';
+        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(149, 149, 0), rgb(235, 235, 0))';
     }
     if (x == 3) {
-        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(0, 0, 77), rgb(13, 0, 255))';
+        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
     }
 }
 
