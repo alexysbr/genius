@@ -9,7 +9,12 @@ var cor_3 = document.getElementById("cor3");
 
 /*console.log(cor0);*/
 
-
+cor_0.addEventListener('mousedown', (event) => {
+    document.getElementById("cor0").style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
+    teste = 0;
+    console.log(teste);
+    return true;
+})
 cor_0.addEventListener('mouseup', (event) => {
     document.getElementById("cor0").style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
 })
