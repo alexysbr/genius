@@ -1,8 +1,7 @@
 var jogada=[]
-var errou = -1;
 var cont_cpu = 0;
 var cont_jogador = 0;
-var teste = -1;
+
 /*var cor_0 = document.getElementById("cor0");
 var cor_1 = document.getElementById("cor1");
 var cor_2 = document.getElementById("cor2");
@@ -90,6 +89,7 @@ function desliga_botao(j) {
 }
 
 function clicado(x){
+ 
     if (x == 0) {
         document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
     }
@@ -102,8 +102,24 @@ function clicado(x){
     if (x == 3) {            
         document.getElementById("cor"+ x).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(13, 0, 255))';  
     }
-    cont++;
-    teste = x;
+ 
+
+    if(x != jogada[cont_jogador]){
+        cont_jogador = -1;
+        alert('Errou!');
+        //location.reload(false)
+    }    
+    if(cont_jogador == cont_cpu){
+        cont_cpu++;
+        liga_botao_bot(cont_cpu);           
+        cont_jogador = 0;   
+    }
+    if(x == jogada[cont_jogador]){
+        cont_jogador++;        
+    }
+    
+    console.log('cpu '+cont_cpu);  
+    console.log('jogador '+cont_jogador);
 }
 
 function desclicado(x){
@@ -128,7 +144,7 @@ function jogo(){
     }
     /*alert(jogada[50])*/ //teste do vetor
 
-    
+    liga_botao_bot(0);
     /*for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
         /*cont = 0;
