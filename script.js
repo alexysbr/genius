@@ -126,8 +126,9 @@ function jogo(){
         jogada[i]=getRandomInt(0, 4);
         /*jogada.push(getRandomInt(0, 4));*/
     }
-    
     /*alert(jogada[50])*/ //teste do vetor
+
+    
     /*for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
         /*cont = 0;
