@@ -1,14 +1,15 @@
 var jogada=[]
 var errou = -1;
-var cont = 0;
+var cont_cpu = 0;
+var cont_jogador = 0;
 var teste = -1;
-var cor_0 = document.getElementById("cor0");
+/*var cor_0 = document.getElementById("cor0");
 var cor_1 = document.getElementById("cor1");
 var cor_2 = document.getElementById("cor2");
 var cor_3 = document.getElementById("cor3");
 
 /*console.log(cor0);*/
-
+/*
 cor_0.addEventListener('mousedown', (event) => {
     document.getElementById("cor0").style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
     teste = 0;
@@ -38,7 +39,7 @@ cor_3.addEventListener('mousedown', (event) => {
 })
 cor_3.addEventListener('mouseup', (event) => {
     document.getElementById("cor3").style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
-})
+})*/
 
 
 
@@ -88,7 +89,7 @@ function desliga_botao(j) {
     }
 }
 
-/*function clicado(x){
+function clicado(x){
     if (x == 0) {
         document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
     }
@@ -118,22 +119,23 @@ function desclicado(x){
     if (x == 3) {
         document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
     }
-}*/
+}
 
 function jogo(){
     for (var i = 0; i < 50; i++) {
         jogada[i]=getRandomInt(0, 4);
         /*jogada.push(getRandomInt(0, 4));*/
     }
+    
     /*alert(jogada[50])*/ //teste do vetor
-    for (var i = 0; i < 4; i++) {
+    /*for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
         /*cont = 0;
         if(cont <= i && jogada[i] == teste){
             cont++;
         }*/
         //console.log("OK"+1);
-        for (var j = 0; j < 4; j++) {
+        /*for (var j = 0; j < 4; j++) {
             if(cor_0.addEventListener('mousedown', (event) => {
                 document.getElementById("cor0").style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
                 teste = 0;
@@ -155,5 +157,5 @@ function jogo(){
                 alert("Errou");
             }*/
        // }*/
-    }
+    //}
 }
