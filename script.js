@@ -1,6 +1,9 @@
-var jogada=[]
+var jogada=[];
 var cont_cpu = 0;
 var cont_jogador = 0;
+var escolha;
+var escolhido = 5;
+
 
 /*var cor_0 = document.getElementById("cor0");
 var cor_1 = document.getElementById("cor1");
@@ -78,13 +81,13 @@ function desliga_botao(j) {
         document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
     }
     if (jogada[j] == 1) {
-        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(140, 1, 1), red)';
+        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(190, 0, 0), rgb(253, 48, 48))';
     }
     if (jogada[j] == 2) {
         document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(149, 149, 0), rgb(235, 235, 0)';
     }
     if (jogada[j] == 3) {
-        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
+        document.getElementById("cor"+jogada[j]).style.background = 'linear-gradient(270deg, rgb(0, 0, 211), rgb(103, 95, 255))';
     }
 }
 
@@ -107,7 +110,7 @@ function clicado(x){
     if(x != jogada[cont_jogador]){
         cont_jogador = -1;
         alert('Errou!');
-        //location.reload(false)
+        location.reload(false);
     }    
     if(cont_jogador == cont_cpu){
         cont_cpu++;
@@ -115,6 +118,10 @@ function clicado(x){
         cont_jogador = -1;   
     }
     cont_jogador++; 
+    if(escolhido == cont_cpu){
+        alert('Vitória!');
+        location.reload(false);
+    }
     
     console.log('cpu '+cont_cpu);  
     console.log('jogador '+cont_jogador);
@@ -125,13 +132,13 @@ function desclicado(x){
         document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
     }
     if (x == 1) {
-        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(140, 1, 1), red)';
+        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(190, 0, 0), rgb(253, 48, 48))';
     }
     if (x == 2) {
         document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(149, 149, 0), rgb(235, 235, 0))';
     }
     if (x == 3) {
-        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
+        document.getElementById("cor"+ x).style.background = 'linear-gradient(270deg, rgb(0, 0, 211), rgb(103, 95, 255))';
     }
 }
 
@@ -141,7 +148,17 @@ function jogo(){
         /*jogada.push(getRandomInt(0, 4));*/
     }
     /*alert(jogada[50])*/ //teste do vetor
-
+    escolha = document.getElementsByName('rad')
+    if(escolha[0].checked){
+        escolhido = 5;    
+    }
+    if(escolha[1].checked){
+        escolhido = 25;
+    }
+    if(escolha[2].checked){
+        escolhido = 50;
+    }
+    console.log(escolhido);
     liga_botao_bot(0);
     /*for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
