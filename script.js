@@ -108,7 +108,8 @@ function clicado(x){
     if (x == 3) {            
         document.getElementById("cor"+ x).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(100, 92, 255))';  
     }
- 
+    
+    
 
     if(x != jogada[cont_jogador]){
         cont_jogador = -1;
@@ -121,6 +122,12 @@ function clicado(x){
         cont_jogador = -1;   
     }
     cont_jogador++; 
+    var turno = document.getElementById('turno');
+    turno.innerHTML = cont_cpu+1;
+    var vez = document.getElementById('vez');
+    vez.innerHTML = cont_jogador;
+    
+
     if(escolhido == cont_cpu){
         alert('Vitória!');
         location.reload(false);
@@ -154,15 +161,20 @@ function jogo(){
     escolha = document.getElementsByName('rad')
     if(escolha[0].checked){
         escolhido = facil;    
+        document.getElementById('total').innerHTML = facil;
     }
     if(escolha[1].checked){
         escolhido = normal;
+        document.getElementById('total').innerHTML = normal;
     }
     if(escolha[2].checked){
         escolhido = dificil;
+        document.getElementById('total').innerHTML = dificil;
     }
     console.log(escolhido);
     liga_botao_bot(0);
+    var turno = document.getElementById('turno');
+    turno.innerHTML = cont_cpu+1;
     /*for (var i = 0; i < 4; i++) {
         liga_botao_bot(i);
         /*cont = 0;

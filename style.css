@@ -67,6 +67,15 @@ section{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+#plac{
+    display: grid;
+    grid-template-columns: minmax(10px, 1fr) minmax(10px, 1fr) minmax(10px, 1fr);
+    padding-top: 5vh;
+    align-items: end;
+}
+#turno,#vez,#total{
+    font-size: 2vmin;
+}
 footer{
     text-align: center;
     font-style: italic;
