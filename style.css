@@ -66,6 +66,13 @@ section{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.42);
+}
+#play{
+    padding-bottom: 1vh;
+}
+#play:hover{
+    color: red;
 }
 #plac{
     display: grid;
