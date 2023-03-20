@@ -3,6 +3,9 @@ var cont_cpu = 0;
 var cont_jogador = 0;
 var escolha;
 var escolhido = 5;
+const facil = 5;
+const normal = 15;
+const dificil = 30;
 
 
 /*var cor_0 = document.getElementById("cor0");
@@ -68,7 +71,7 @@ async function liga_botao_bot(i) {
             document.getElementById("cor"+jogada[j]).style.background = 'radial-gradient(circle, rgb(255, 255, 197), yellow)';
         }
         if (jogada[j] == 3) {            
-            document.getElementById("cor"+jogada[j]).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(13, 0, 255))';  
+            document.getElementById("cor"+jogada[j]).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(100, 92, 255))';  
         }
         await sleep(500);
         desliga_botao(j);
@@ -103,7 +106,7 @@ function clicado(x){
         document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(255, 255, 197), yellow)';
     }
     if (x == 3) {            
-        document.getElementById("cor"+ x).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(13, 0, 255))';  
+        document.getElementById("cor"+ x).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(100, 92, 255))';  
     }
  
 
@@ -150,13 +153,13 @@ function jogo(){
     /*alert(jogada[50])*/ //teste do vetor
     escolha = document.getElementsByName('rad')
     if(escolha[0].checked){
-        escolhido = 5;    
+        escolhido = facil;    
     }
     if(escolha[1].checked){
-        escolhido = 25;
+        escolhido = normal;
     }
     if(escolha[2].checked){
-        escolhido = 50;
+        escolhido = dificil;
     }
     console.log(escolhido);
     liga_botao_bot(0);
