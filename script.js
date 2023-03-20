@@ -112,11 +112,9 @@ function clicado(x){
     if(cont_jogador == cont_cpu){
         cont_cpu++;
         liga_botao_bot(cont_cpu);           
-        cont_jogador = 0;   
+        cont_jogador = -1;   
     }
-    if(x == jogada[cont_jogador]){
-        cont_jogador++;        
-    }
+    cont_jogador++; 
     
     console.log('cpu '+cont_cpu);  
     console.log('jogador '+cont_jogador);
