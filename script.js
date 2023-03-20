@@ -7,47 +7,6 @@ const facil = 5;
 const normal = 15;
 const dificil = 30;
 
-
-/*var cor_0 = document.getElementById("cor0");
-var cor_1 = document.getElementById("cor1");
-var cor_2 = document.getElementById("cor2");
-var cor_3 = document.getElementById("cor3");
-
-/*console.log(cor0);*/
-/*
-cor_0.addEventListener('mousedown', (event) => {
-    document.getElementById("cor0").style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
-    teste = 0;
-    console.log(teste);
-    return true;
-})
-cor_0.addEventListener('mouseup', (event) => {
-    document.getElementById("cor0").style.background = 'linear-gradient(270deg, green, rgb(0, 204, 0))';
-})
-cor_1.addEventListener('mousedown', (event) => {
-    document.getElementById("cor1").style.background = 'radial-gradient(circle, rgb(252, 174, 174), red)';
-    teste = 1;
-})
-cor_1.addEventListener('mouseup', (event) => {
-    document.getElementById("cor1").style.background = 'linear-gradient(270deg, rgb(140, 1, 1), red)';
-})
-cor_2.addEventListener('mousedown', (event) => {
-    document.getElementById("cor2").style.background = 'radial-gradient(circle, rgb(255, 255, 197), yellow)';
-    teste = 2;
-})
-cor_2.addEventListener('mouseup', (event) => {
-    document.getElementById("cor2").style.background = 'linear-gradient(270deg, rgb(149, 149, 0), rgb(235, 235, 0)';
-})
-cor_3.addEventListener('mousedown', (event) => {
-    document.getElementById("cor3").style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(13, 0, 255))';  
-    teste = 3;
-})
-cor_3.addEventListener('mouseup', (event) => {
-    document.getElementById("cor3").style.background = 'linear-gradient(270deg, rgb(0, 0, 122), rgb(13, 0, 255))';
-})*/
-
-
-
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -125,8 +84,6 @@ function clicado(x){
         audio.play();
     }
     
-    
-
     if(x != jogada[cont_jogador]){
         cont_jogador = -1;
         alert('Errou!');
@@ -143,7 +100,6 @@ function clicado(x){
     var vez = document.getElementById('vez');
     vez.innerHTML = cont_jogador;
     
-
     if(escolhido == cont_cpu){
         alert('Vitória!');
         location.reload(false);
@@ -169,7 +125,7 @@ function desclicado(x){
 }
 
 function jogo(){
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < dificil; i++) {
         jogada[i]=getRandomInt(0, 4);
         /*jogada.push(getRandomInt(0, 4));*/
     }
@@ -191,34 +147,4 @@ function jogo(){
     liga_botao_bot(0);
     var turno = document.getElementById('turno');
     turno.innerHTML = cont_cpu+1;
-    /*for (var i = 0; i < 4; i++) {
-        liga_botao_bot(i);
-        /*cont = 0;
-        if(cont <= i && jogada[i] == teste){
-            cont++;
-        }*/
-        //console.log("OK"+1);
-        /*for (var j = 0; j < 4; j++) {
-            if(cor_0.addEventListener('mousedown', (event) => {
-                document.getElementById("cor0").style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
-                teste = 0;
-                console.log(teste);
-                return true;
-            })){
-                console.log("OK"+1);
-            }
-         }
-        //cont = 0;
-        /*while (cont <= i) {
-            //if (errou == -1){
-               /* if(jogada[cont] != teste && teste != -1) {
-                    errou = 1;
-                    break;
-                }*/
-            //}
-           /* if (errou == 1) {
-                alert("Errou");
-            }*/
-       // }*/
-    //}
 }
