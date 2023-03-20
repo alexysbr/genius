@@ -63,15 +63,23 @@ async function liga_botao_bot(i) {
         await sleep(250);
         if (jogada[j] == 0) {
             document.getElementById("cor"+jogada[j]).style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
+            let audio = document.getElementById("clip1");
+            audio.play();
         }
         if (jogada[j] == 1) {
             document.getElementById("cor"+jogada[j]).style.background = 'radial-gradient(circle, rgb(252, 174, 174), red)';
+            let audio = document.getElementById("clip2");
+            audio.play();
         }
         if (jogada[j] == 2) {
             document.getElementById("cor"+jogada[j]).style.background = 'radial-gradient(circle, rgb(255, 255, 197), yellow)';
+            let audio = document.getElementById("clip3");
+            audio.play();
         }
         if (jogada[j] == 3) {            
             document.getElementById("cor"+jogada[j]).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(100, 92, 255))';  
+            let audio = document.getElementById("clip4");
+            audio.play();
         }
         await sleep(500);
         desliga_botao(j);
@@ -98,15 +106,23 @@ function clicado(x){
  
     if (x == 0) {
         document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(187, 255, 187), rgb(0, 204, 0))';
+        let audio = document.getElementById("clip1");
+        audio.play();
     }
     if (x == 1) {
         document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(252, 174, 174), red)';
+        let audio = document.getElementById("clip2");
+        audio.play();
     }
     if (x == 2) {
         document.getElementById("cor"+ x).style.background = 'radial-gradient(circle, rgb(255, 255, 197), yellow)';
+        let audio = document.getElementById("clip3");
+        audio.play();
     }
     if (x == 3) {            
         document.getElementById("cor"+ x).style.background='radial-gradient(circle, rgb(205, 205, 252), rgb(100, 92, 255))';  
+        let audio = document.getElementById("clip4");
+        audio.play();
     }
     
     
