@@ -129,7 +129,7 @@ function jogo(){
         jogada[i]=getRandomInt(0, 4);
         /*jogada.push(getRandomInt(0, 4));*/
     }
-    /*alert(jogada[50])*/ //teste do vetor
+    /*alert(jogada[5])*/ //teste do vetor
     escolha = document.getElementsByName('rad')
     if(escolha[0].checked){
         escolhido = facil;    
